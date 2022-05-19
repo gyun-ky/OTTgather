@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: homekiri
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql : true
+        format_sql : true
+        user_sql_comments : true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    platform: mysql
+    url: jdbc:mariadb://homekiri-new.cws9rsilf8df.ap-northeast-2.rds.amazonaws.com/homekiri_new?autoReconnect=true
+    username: admin
+    password: homekiri0801!
+    driver-class-name : org.mariadb.jdbc.Driver
+#    driver-class-name: com.mysql.cj.jdbc.Driver # mysql 8버전
+    # driver-class-name: com.mysql.jdbc.Driver # mysql 5버전
+
+logging:
+#      config: classpath:logback-spring.xml
+  level:
+    org.springframework.security: DEBUG
+    org.hibernate.type.descriptor.sql: trace
+
